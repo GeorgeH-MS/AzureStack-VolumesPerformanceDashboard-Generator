@@ -17,7 +17,12 @@ param(
     [ValidateSet('Automatic', 'PT1M', 'PT1H', 'P1D', 'PT5M', 'PT15M', 'PT30M', 'PT6H', 'PT12H')]
     [string]$timeGrain = 'Automatic',
     [Parameter(Mandatory = $false)]
-    [string]$outputLocation = '.'
+    [string]$outputLocation = '.',
+    [Parameter(Mandatory = $false)]
+    [Boolean]$capacityOnly = $false,
+    [Parameter(Mandatory = $false)]
+    [ValidateSet('all', 'object', 'infrastructure', 'vmtemp')]
+    [string]$volumeType = 'all'
 )
 
 <#
